@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🎮 Game Hub</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+      min-height: 100vh;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(90deg, #f9ca24, #f0932b, #e74c3c);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #aaa;
+      font-size: 1.1rem;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 30px;
+    }
+
+    .game-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 30px 25px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      backdrop-filter: blur(10px);
+    }
+
+    .game-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    }
+
+    .game-icon {
+      font-size: 4rem;
+      margin-bottom: 15px;
+    }
+
+    .game-card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .game-card p {
+      color: #bbb;
+      font-size: 0.95rem;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    .play-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(90deg, #f9ca24, #f0932b);
+      box-shadow: 0 4px 20px rgba(249,202,36,0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 8px 30px rgba(249,202,36,0.6);
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px;
+      color: #555;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎮 Game Hub</h1>
+    <p>Kies een spel en begin meteen te spelen!</p>
+  </header>
+
+  <div class="game-grid" id="game-grid"></div>
+
+  <footer>
+    <p>Voeg meer games toe via games.js en een nieuw .html bestand</p>
+  </footer>
+
+  <script src="games.js"></script>
+  <script>
+    const grid = document.getElementById('game-grid');
+    games.forEach(game => {
+      const card = document.createElement('div');
+      card.className = 'game-card';
+      card.innerHTML = `
+        <div class="game-icon">${game.icon}</div>
+        <h2>${game.name}</h2>
+        <p>${game.description}</p>
+        <a class="play-btn" href="${game.file}">▶ Speel Nu!</a>
+      `;
+      grid.appendChild(card);
+    });
+  </script>
+
+</body>
+</html>
