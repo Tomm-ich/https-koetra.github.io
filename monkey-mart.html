@@ -3,54 +3,24 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🐒 Monkey Mart</title>
+  <title>Monkey Mart</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background: #1a1a2e;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      font-family: 'Segoe UI', sans-serif;
-      color: white;
-    }
-    .top-bar {
+    html, body {
       width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      padding: 16px 24px;
-      background: rgba(0,0,0,0.3);
+      height: 100%;
+      overflow: hidden;
+      background: #000;
     }
-    .back-btn {
-      padding: 10px 22px;
-      background: linear-gradient(90deg, #f9ca24, #f0932b);
-      border: none;
-      border-radius: 30px;
-      color: white;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-    }
-    .back-btn:hover { opacity: 0.85; }
-    h1 { font-size: 1.5rem; }
     iframe {
+      width: 100%;
+      height: 100%;
       border: none;
-      border-radius: 12px;
-      margin-top: 20px;
-      width: 900px;
-      height: 600px;
-      max-width: 98vw;
+      display: block;
     }
   </style>
 </head>
 <body>
-  <div class="top-bar">
-    <a class="back-btn" href="index.html">← Terug</a>
-    <h1>🐒 Monkey Mart</h1>
-  </div>
   <iframe src="https://genizymath.github.io/games/monkey-mart/" allowfullscreen></iframe>
 </body>
 </html>
