@@ -3,7 +3,7 @@
 // =============================================
 // Maak een nieuw .html bestand voor je game,
 // en voeg hieronder een nieuw object toe.
-//
+// 
 // Voorbeeld:
 // {
 //   name: "Mijn Nieuwe Game",
